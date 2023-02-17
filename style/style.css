@@ -30,6 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 h2 {
@@ -46,18 +47,51 @@ h2 {
 }
 
 h1 {
-  max-width: 500px;
+  max-width: 550px;
   width: 100%;
-  height: 90px;
+  height: 110px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   font-family: 'Emilys Candy', cursive;
-  font-size: 60px;
+  font-size: 70px;
   text-align: center;
-  color: rgb(60, 60, 60);
+  color: rgb(216, 66, 66);
   padding: 10px;
   box-sizing: border-box;
   margin-top: 10px;
+  animation: flashing 2s 1s infinite normal;
+}
+
+@keyframes flashing {
+  0% {color:rgb(216, 66, 66)}
+  25% {color:rgb(233, 204, 38)}
+  50% {color:rgb(195, 146, 184)}
+  75% {color:rgb(32, 11, 11)}
+  100% {color:rgb(216, 66, 66)}
+}
+
+.running-arrow {
+  width: 40px;
+  height: 40px;
+  background-image: url(../image/ouija-icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -20px;
+  rotate: 90deg;
+  animation: running-arrow 10s normal infinite;
+}
+
+@keyframes running-arrow {
+  0% {left: -19px; top: -20px;}
+  24% {transform: rotate(0deg);}
+  25% {left: 580px; top: -20px; transform: rotate(90deg);}
+  49% {transform: rotate(90deg);}
+  50% {left: 580px; top: 480px; transform: rotate(180deg);}
+  74% {transform: rotate(180deg);}
+  75% {left: -19px; top: 480px; transform: rotate(270deg);}
+  99% {transform: rotate(270deg);}
+  100% {left: -19px; top: -20px; transform: rotate(360deg);}
 }
 
 p {
@@ -99,4 +133,18 @@ button {
   border-radius: 20px;
   border: 0;
   color: rgb(60, 60, 60);
+}
+
+.btn-yes:hover {
+  scale: 1.4;
+  transition: .5s;
+  color: rgb(216, 66, 66);
+  font-size: 70px;
+}
+
+.btn-no:hover {
+  scale: 1.1;
+  transition: .5s;
+  color: rgb(216, 66, 66);
+}
 }
